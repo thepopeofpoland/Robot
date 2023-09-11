@@ -1,6 +1,7 @@
 void setup() {
     Serial.begin(9600);
-    Serial.print("Hello?");
+    Serial.print("Hello?\n");
+    Serial.print("whats a matter you?");
 }
 
 void loop() {
