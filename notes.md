@@ -60,4 +60,5 @@ Worked on math operators in Arduino
   Serial.println(c);
 ```
 
-### Activity 5
+### Lab 2
+built up the arduino and shield together and assembled the led setup. 
