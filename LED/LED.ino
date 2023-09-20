@@ -1,6 +1,6 @@
 void setup() {
-    pinMode(13, OUTPUT);
-    pinMode(12, OUTPUT);
+    // pinMode(13, OUTPUT);
+    // pinMode(12, OUTPUT);
 }
 
 void loop() {

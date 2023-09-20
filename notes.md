@@ -60,5 +60,11 @@ Worked on math operators in Arduino
   Serial.println(c);
 ```
 
-### Lab 2
+### Lab 1.2
 built up the arduino and shield together and assembled the led setup. 
+Look at LED.ino in the LED folder to see the code used to light the lights. 
+Q1. the breadboard is a set of interconnected holes that allows you to place a wire or other component into 1 of 5 holes that are all interconnected to share power or pass power along without needing more wires
+Q2. Without ```pinMode(xx,OUTPUT)``` you get super faint output from the LED
+Q3. When you pass HIGH and LOW into the function it changes the output from sending higher power to sending lower power. HIGH has enough power to overcome the resistor and LOW does not.
+
+### lab 2
