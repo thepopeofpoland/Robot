@@ -1,6 +1,6 @@
 {
     "board": "arduino:avr:uno",
     "programmer": "avrisp",
-    "sketch": "..\\..\\..\\Users\\Matthew\\Documents\\PlatformIO\\Projects\\test\\src\\main.ino",
+    "sketch": "servo\\servo.ino",
     "port": "COM5"
 }

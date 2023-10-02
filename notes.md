@@ -68,3 +68,19 @@ Q2. Without ```pinMode(xx,OUTPUT)``` you get super faint output from the LED
 Q3. When you pass HIGH and LOW into the function it changes the output from sending higher power to sending lower power. HIGH has enough power to overcome the resistor and LOW does not.
 
 ### lab 2
+- Got the BOE built the way it is supposed to be.
+- the two servos are centered.
+- When i mess with the values in the writeMicroseconds() function if its greater than the 1500 that i centered on it rotates counter-clockwise. if the value is lower it rotates clockwise.
+```arduino
+#include <Servo.h>
+  Servo leftServo;
+  Servo rightServo;
+void setup() {
+  leftServo.attach(11);
+  rightServo.attach(10);
+  leftServo.writeMicroseconds(1500);
+  rightServo.writeMicroseconds(1500);
+}
+
+void loop() {}
+```
