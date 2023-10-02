@@ -1,13 +1,11 @@
-#include <Arduino.h>
 #include <Servo.h>
-
-Servo servoLeft;
-
+Servo leftServo;
+Servo rightServo;
 void setup() {
-    servoLeft.attach(11);
-    servoLeft.writeMicroseconds(1500);
+    leftServo.attach(11);
+    rightServo.attach(10);
+    leftServo.writeMicroseconds(1500);
+    rightServo.writeMicroseconds(1500);
 }
 
-void loop() {
-    // put your main code here, to run repeatedly:
-}
+void loop() {}
