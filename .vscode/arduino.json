@@ -1,6 +1,6 @@
 {
     "board": "arduino:avr:uno",
     "programmer": "avrisp",
-    "sketch": "Robot.ino",
+    "sketch": "..\\..\\..\\Users\\Matthew\\Documents\\PlatformIO\\Projects\\test\\src\\main.ino",
     "port": "COM5"
 }
