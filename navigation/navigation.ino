@@ -10,8 +10,8 @@ delay(1000);
 servoLeft.attach (11);
 servoRight.attach (10);
 // Full speed forward for 3 seconds
-servoLeft.writeMicroseconds (1800);
-servoRight.writeMicroseconds (1800);
+servoLeft.writeMicroseconds (1700);
+servoRight.writeMicroseconds (1300);
 delay(3000);
 servoLeft.detach ();
 servoRight.detach ();
