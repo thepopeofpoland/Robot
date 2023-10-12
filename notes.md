@@ -112,3 +112,35 @@ void loop () {
 }
 ```
 - Servo issue has been discovered. I am using two different kinds of servos. I feel dumb. Servo has been swapped out so they now match and are centered on 1500.
+
+# 10-12
+- started the whisker lab.
+- wrote the following code block. Watched serial ports to see the results. Look at the picture below the code block for an example of the results.
+``` Arduino
+void setup() {
+    // Play a tone to show program is starting
+    tone(4, 3000, 1000);
+    delay(1000);
+
+    pinMode(7, INPUT);
+    pinMode(5, INPUT);
+  
+    Serial.begin(9600);
+}
+void loop() {
+
+    byte whiskerLeft = digitalRead(5);
+    byte whiskerRight = digitalRead(7);
+
+    Serial.print(whiskerLeft);
+    Serial.println(whiskerRight);
+
+    delay(50);
+}
+```
+![](whisker_output.png)
+
+![](Whisker_2.png)
+
+- Modified the robot to include LEDs to demonstrate when the whiskers are triggered. 
+- The left LED lights up when the left whisker is touched and the right lights up when the right is touched. 
