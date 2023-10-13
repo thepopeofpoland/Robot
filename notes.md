@@ -287,3 +287,51 @@ float volts (int adPin){
 - modified the code to test the right circuit. the super high numbers are ambient the lower numbers are with flashlight shining.
 
 ![](Bright_Light_Right.png)
+
+- Wrote a new file to test the two transistors together.
+```Arduino
+void setup() {
+  tone(4,3000,1000);
+  delay (1000);
+
+  Serial.begin(9600);
+}
+
+void loop() {
+  float timeDecayLeft = float(getDecayTime(8));
+  float timeDecayRight = float(getDecayTime(6));
+
+  float ndShade = timeDecayRight / (timeDecayRight + timeDecayLeft) - 0.5;
+
+  Serial.println("Left     ndShade     Right");
+  Serial.print(timeDecayLeft);
+  Serial.print("     ");
+  Serial.print(ndShade);
+  Serial.print("     ");
+  Serial.println(timeDecayRight);
+  Serial.println("");
+
+  delay(1000);
+}
+long getDecayTime(int pin){
+  //charge the capacitor
+  pinMode(pin, OUTPUT);
+  digitalWrite(pin, HIGH);
+  delay(1);
+
+  //read from pin and wait for the voltage to drop.
+  pinMode(pin,INPUT);
+  digitalWrite(pin, LOW);
+  long time = micros();
+  while(digitalRead(pin));
+  time = micros() - time;
+
+  return time;
+}
+```
+- The results for covering one transistor is the below pic
+![](1_covered_transistor.png)
+- Below pic is with both sensors covered.
+![](2_covered_transistors.png)
+
+- changed the code so the robot was seeking light from a flashlight. see code move_2_transistor.ino for details.
