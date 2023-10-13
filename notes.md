@@ -242,3 +242,48 @@ float volts(int adPin){
 }
 ```
 ![](Volts_1.png)
+
+- Modified the code block from the above to allow the robot to move forward until it detects a light that makes it produce a voltage of 3.5 or higher. see code block below
+```arduino
+#include <Servo.h>
+Servo servoLeft;
+Servo servoRight;
+void setup() {
+    // Play a tone to show program is starting
+    tone(4, 3000, 1000);
+    delay(1000);
+
+    // Servos moved to 10 & 11 for more accurate results
+    // Try using 12 & 13 as well to see what happens
+    servoLeft.attach(11);
+    servoRight.attach(10);
+
+    // Full speed forward for 3 seconds
+    servoLeft.writeMicroseconds(1700);
+    servoRight.writeMicroseconds(1300); 
+}
+
+void loop() {
+  float stoppingVoltage = 3.5;
+  if(volts(A3) > stoppingVoltage){
+   servoLeft.detach();
+    servoRight.detach();
+    }  
+}
+float volts (int adPin){
+  return float (analogRead(adPin)) *5 /1024.0;
+}
+```
+- Modified the code to test the left circuit. the numbers in the 700s are ambient light. When it drops that is light being introduced to the left transistor.
+
+- ambient light
+
+![](2_transistor_ambient.png)
+
+- left intense light
+
+![](Bright_Light_Left.png)
+
+- modified the code to test the right circuit. the super high numbers are ambient the lower numbers are with flashlight shining.
+
+![](Bright_Light_Right.png)
