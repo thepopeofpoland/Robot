@@ -218,3 +218,27 @@ void backward(int time) {
     delay(time);
 }
 ```
+
+# 10/13
+
+- Changed the robot to have the single photo resistor setup. 
+- Ran the below code to get voltage readouts in the picture below code block.
+- the 0.67 volts was from ambient light. the 4.24+ volts were when I shined a flashlight at the phototransistor.
+```Arduino
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  Serial.print("A3 = ");
+  Serial.print(volts(A3));
+  Serial.println(" volts");
+  delay(1000);
+}
+float volts(int adPin){
+  return float (analogRead(adPin)) *5.0 / 1024.0;
+}
+```
+![](Volts_1.png)
