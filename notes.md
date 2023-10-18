@@ -335,3 +335,6 @@ long getDecayTime(int pin){
 ![](2_covered_transistors.png)
 
 - changed the code so the robot was seeking light from a flashlight. see code move_2_transistor.ino for details.
+
+# 10/16
+- built the PING robot. Started to figure out what parts of the provided code i can keep vs rewrite.
