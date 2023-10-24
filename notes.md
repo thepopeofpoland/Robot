@@ -364,5 +364,26 @@ void loop() {
     delay(500);
     turretAngle +=45;
 ```
-- 
+- I will be working to implement an array of positions for the PING sensor to look at and make decisions based on that data.
 
+# 10/24
+- got the turret to scan from 45 - 135 degrees in a loop.
+- In file PINGtest I got the robot to drive forward and then stop when it detected an obstacle. When I remove the obstacle the robot starts to drive forward again.
+```arduino
+  if(convert(num) < 50){
+      servoRight.detach();
+      servoLeft.detach();
+      Serial.println("too close to item.");
+    }else{
+      servoRight.attach(10);
+      servoLeft.attach(11);
+    }
+```
+- Modified PINGtest so the bot avoids objects by turning right instead of just stopping.
+```arduino
+if(convert(num) < 50){
+      maneuver(200, -200); // turns the bot to the right.
+      Serial.println("too close to item.");
+    }
+```
+- I need to figure out how to determine which way to turn if an object is in the way, and how far ahead 
