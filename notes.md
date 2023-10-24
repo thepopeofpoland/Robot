@@ -338,3 +338,31 @@ long getDecayTime(int pin){
 
 # 10/16
 - built the PING robot. Started to figure out what parts of the provided code i can keep vs rewrite.
+
+# 10/23
+- Used the lab provided code to get the PING sensor setup. 
+
+![](PING_distance_test.png)
+- got the robot to detect with the PING and send it to Serial port in cm.
+
+![](PING_distance_cm.png)
+- Modified the code so that the turret now connects and checks through different angles. It isn't the final code yet, but it gives me the idea to iterate through a few different angles in an array.
+```arduino
+#include <Servo.h>
+Servo turretServo;
+int turretAngle = 0;
+void setup() {
+    Serial.begin(9600);
+    turretServo.attach(12);
+    turretServo.write(turretAngle);
+    
+}
+void loop() {
+    long num = ping(13);  // PING is in pin 13
+    turretServo.write(turretAngle);
+    Serial.println(convert(num));
+    delay(500);
+    turretAngle +=45;
+```
+- 
+
