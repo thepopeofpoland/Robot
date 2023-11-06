@@ -389,7 +389,8 @@ if(convert(num) < 50){
 - I need to figure out how to determine which way to turn if an object is in the way, and how far ahead 
 
 # 11-5 Update
-- created initial walking code.
-- working on the turning function.
-- need to finish assembling the full body.
-- 
+- created initial walking code where legs will be paired front right and back left and vice versa.
+- working on the turning function that will use the PING sensor to pick the most open route and guide the robot there. Then return to the standard walking.
+
+- need to finish assembling the full body of the walker.
+- need to shorten the legs from 7" long down 
